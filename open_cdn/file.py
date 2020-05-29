@@ -125,7 +125,7 @@ class FileManager:
         :param private_key: If the target isn't loaded, you should set a private_key yourself.
         """
         if (not file.loaded and private_key is None) or (
-            file.file.private_key is None and private_key is None
+            private_key is None and file.file.private_key is None
         ):
             raise ValueError(
                 "The file is not loaded and no private_key was set or the file doesn't have any private_key"
