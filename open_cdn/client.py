@@ -9,6 +9,7 @@ This module implements the client.
 
 from open_cdn.file import FileManager
 from open_cdn.authentication import AuthenticationManager
+from open_cdn.group import GroupManager
 from open_cdn.version import VersionManager
 
 
@@ -16,9 +17,11 @@ class Client:
     file_manager: FileManager = None
     authentication_manager: AuthenticationManager = None
     version_manager: VersionManager = None
+    group_manager: GroupManager = None
 
     def __init__(self, api_url):
         self.api_url = api_url
         self.file_manager = FileManager(self)
         self.authentication_manager = AuthenticationManager(self)
         self.version_manager = VersionManager(self)
+        self.group_manager = GroupManager(self)

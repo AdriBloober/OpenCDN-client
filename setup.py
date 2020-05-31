@@ -3,13 +3,13 @@ from distutils.core import setup
 setup(
     name="OpenCDN-client",
     packages=["open_cdn"],
-    version="0.10.1",
+    version="0.11",
     license="gpl-3.0",
     description="A client to communicate with the OpenCDN backend.",
     author="AdriBloober",
     author_email="adribloober@adribloober.wtf",
     url="https://github.com/AdriBloober/OpenCDN-client",
-    download_url="https://github.com/AdriBloober/OpenCDN-client/archive/v0.10.1.tar.gz",
+    download_url="https://github.com/AdriBloober/OpenCDN-client/archive/v0.11.tar.gz",
     keywords=["client", "api", "opencdn", "open-cdn"],
     install_requires=["requests", "pycryptodome"],
     classifiers=[
