@@ -9,7 +9,7 @@ setup(
     author="AdriBloober",
     author_email="adribloober@adribloober.wtf",
     url="https://github.com/AdriBloober/OpenCDN-client",
-    download_url="https://github.com/AdriBloober/OpenCDN-client/archive/v0.10.1.tar.gz",
+    download_url="https://github.com/AdriBloober/OpenCDN-client/archive/v0.11.tar.gz",
     keywords=["client", "api", "opencdn", "open-cdn"],
     install_requires=["requests", "pycryptodome"],
     classifiers=[
