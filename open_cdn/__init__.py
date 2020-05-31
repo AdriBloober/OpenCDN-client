@@ -11,3 +11,4 @@ from open_cdn.errors import *
 from open_cdn.file import File, FileTarget, FileManager
 from open_cdn.authentication import AuthenticationManager
 from open_cdn.version import VersionManager
+from open_cdn.group import GroupManager, GroupTarget, Group

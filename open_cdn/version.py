@@ -10,7 +10,7 @@ import requests
 
 from open_cdn.errors import parse_error
 
-CLIENT_VERSION = 10
+CLIENT_VERSION = 11
 
 
 class VersionDiscrepancy(Exception):

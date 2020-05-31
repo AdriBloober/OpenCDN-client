@@ -5,6 +5,8 @@ from Crypto.PublicKey import RSA
 
 MAXIMAL_LENGTH_OF_RSA_KEY = 2048
 
+"""You can use the OpenCDN-cli to generate these keys."""
+
 
 def cli_help():
     print("Help:")
@@ -19,11 +21,13 @@ if __name__ == "__main__":
     length_of_rsa_key = int(args[0])
     output_file_for_private_key = args[1]
     if length_of_rsa_key == 0 or length_of_rsa_key > MAXIMAL_LENGTH_OF_RSA_KEY:
-        raise ValueError(f"The rsa key length should be higher than 0 and lower than {MAXIMAL_LENGTH_OF_RSA_KEY}.")
+        raise ValueError(
+            f"The rsa key length should be higher than 0 and lower than {MAXIMAL_LENGTH_OF_RSA_KEY}."
+        )
     key = RSA.generate(length_of_rsa_key)
     exported_public_key = key.publickey().export_key("DER")
     exported_private_key = key.export_key("DER")
     print("Public Key: ")
     print(base64.b64encode(exported_public_key).decode("utf-8"))
-    with open(output_file_for_private_key, 'wb') as file:
+    with open(output_file_for_private_key, "wb") as file:
         file.write(exported_private_key)

@@ -79,6 +79,36 @@ class InvalidAuthenticationToken(BasicError):
     http_return = 403
 
 
+class InternalServerError(BasicError):
+    id = 11
+    name = "internal_server_error"
+    http_return = 500
+
+
+class GroupDoesNotExists(BasicError):
+    id = 12
+    name = "group_does_not_exists"
+    http_return = 404
+
+
+class GroupAlreadyExists(BasicError):
+    id = 13
+    name = "group_already_exists"
+    http_return = 400
+
+
+class InvalidGroupName(BasicError):
+    id = 14
+    name = "invalid_group_name"
+    http_return = 403
+
+
+class FileAlreadyExists(BasicError):
+    id = 15
+    name = "file_already_exists"
+    http_return = 400
+
+
 available_errors = {
     BasicError,
     NoFileInRequest,
@@ -91,6 +121,11 @@ available_errors = {
     ActionNeedsAuthenticationToken,
     AuthenticationKeyNotFound,
     InvalidAuthenticationToken,
+    InternalServerError,
+    GroupDoesNotExists,
+    GroupAlreadyExists,
+    InvalidGroupName,
+    FileAlreadyExists,
 }
 
 
@@ -108,7 +143,10 @@ def parse_error(response: requests.Response, check_json=False, json=True):
         j = response.json()
         if "status" in j and j["status"] == "error":
             for available_error in available_errors:
-                if available_error.id == int(j["id"]) and available_error.name == j["name"]:
+                if (
+                    available_error.id == int(j["id"])
+                    and available_error.name == j["name"]
+                ):
                     raise available_error()
             raise BasicError()
         response.raise_for_status()

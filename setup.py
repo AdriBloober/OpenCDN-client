@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name="OpenCDN-client",
     packages=["open_cdn"],
-    version="0.10.1",
+    version="0.11",
     license="gpl-3.0",
     description="A client to communicate with the OpenCDN backend.",
     author="AdriBloober",
