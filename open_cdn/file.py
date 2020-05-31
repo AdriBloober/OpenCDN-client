@@ -7,7 +7,7 @@ This module implements the file management.
 :license: GNU General Public License v3.0
 """
 
-from typing import List, Tuple
+from typing import List
 
 import requests
 

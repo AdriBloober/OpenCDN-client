@@ -6,10 +6,7 @@ This module implements the group management.
 :copyright: (c) 2020 by AdriBloober.
 :license: GNU General Public License v3.0
 """
-from typing import List
-
 import requests
-from open_cdn.file import FileTarget
 
 from open_cdn.errors import parse_error, BasicError
 
@@ -52,7 +49,7 @@ class Group:
         key: str,
         hashed_key: str,
         private_key: str,
-        files: List[FileTarget] = None,
+        files: list = None,  # List[FileTarget]
     ):
         self.name = name
         self.key = key
